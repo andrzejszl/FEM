@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        header {
+            background-color: rgb(68, 35, 11);
+            color: bisque;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            display: grid;
+            gap: calc(15px + 1%);
+            margin: 3%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "list list name name"
+                "list list payment payment"
+                ". checkout checkout ."
+                "button button button button"
+            ;
+            color: rgb(94, 53, 24);
+        }
+
+        .list,
+        .name,
+        .payment {
+            background-color: bisque;
+            border-radius: 10px;
+            box-shadow: 0 0 2px 2px rgb(233, 232, 232);
+            padding: 5%;
+        }
+
+        div.list {
+            grid-area: list;
+        }
+
+        div.item {
+            display: grid;
+            grid-template-columns: 50px 1fr 50px;
+            padding: 20px;
+            color: black;
+            border-bottom: 1px solid rgb(94, 53, 24);
+        }
+
+        div.item:last-child {
+            border-bottom: none;
+        }
+
+        div.item__extras {
+            color: rgb(94, 53, 24);
+            margin-top: 5px;
+            font-size: 80%;
+        }
+
+        div.item__name,
+        div.item__price {
+            font-weight: bold;
+        }
+
+        div.name {
+            grid-area: name;
+        }
+
+        div.payment {
+            grid-area: payment;
+        }
+
+        div.checkout {
+            grid-area: checkout;
+        }
+
+        input {
+            display: block;
+            height: 2rem;
+            border-radius: 1000px;
+            width: 100%;
+            background-color: transparent;
+            border: 2px solid black;
+            padding-left: 10px;
+        }
+
+        input:focus {
+            caret-color: transparent;
+        }
+
+        div.payment input:last-child {
+            width: 50%;
+        }
+
+        label {
+            position: relative;
+            font-size: 0.5rem;
+            background-color: bisque;
+            top: 8px;
+            left: 25px;
+            padding: 5px;
+        }
+
+        div.checkout {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .checkout p {
+            margin: 10px 0;
+        }
+
+        button {
+            grid-area: button;
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            background: rgb(238, 181, 140);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>&#9749 Coffee Masters</h1>
+    </header>
+    <main>
+        <div class="list">
+            <p class="label">ITEMS</p>
+            <div class="list__item item">
+                <div class="item__count">1x</div>
+                <div class="item__details">
+                    <div class="item__name">Cappucino</div>
+                    <div class="item__extras">
+                        <div>Light foam</div>
+                    </div>
+                </div>
+                <div class="item__price">$6.00</div>
+            </div>
+
+            <div class="list__item item">
+                <div class="item__count">1x</div>
+                <div class="item__details">
+                    <div class="item__name">Cappucino</div>
+                    <div class="item__extras">
+                        <div>Almond milk</div>
+                        <div>Double Espresso Shot</div>
+                    </div>
+
+                </div>
+                <div class="item__price">$7.90</div>
+            </div>
+
+            <div class="list__item item">
+                <div class="item__count">1x</div>
+                <div class="item__details">
+                    <div class="item__name">Croissant</div>
+                    <div class="item__extras">Butter</div>
+                </div>
+                <div class="item__price">$5.37</div>
+            </div>
+        </div>
+        <div class="name">
+            <p class="label">NAME</p>
+            <label for="name">Name for order</label>
+            <input type="text" name="name">
+        </div>
+        <div class="payment">
+            <p class="label">PAYMENT</p>
+            <label for="cardNumber">Card number</label>
+            <input type="text" name="cardNumber">
+            <label for="ccvNumber">CCV number</label>
+            <input type="text" name="ccvNumber">
+        </div>
+        <div class="checkout">
+            <div class="checkout__info">
+                <p>Subtotal:</p>
+                <p>Tax:</p>
+                <p>Total:</p>
+            </div>
+            <div class="checkout__price">
+                <p>$19.27</p>
+                <p>$0.96</p>
+                <p>$20.23</p>
+            </div>
+        </div>
+        <button>Place order</button>
+    </main>
+</body>
+
+</html>
