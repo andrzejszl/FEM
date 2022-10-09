@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(196, 96, 14);
+}
+
+header select {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 200px;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 20px 0 80px 20px;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    /* max-width: 100vw; */
+    /* min-width: 80vw; */
+    max-height: 100vh;
+    min-height: 80vh;
+    margin-top: 30px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 5rem;
+    animation: loading 1s infinite linear;
+}
+
+.loading.show {
+    display: block;
+}
+
+@keyframes loading {
+    to {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
