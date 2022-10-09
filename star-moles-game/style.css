@@ -1,0 +1,75 @@
+:root {
+    --holeSize: 250px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: url('./img/cursor.png') 50 50, auto;
+}
+
+.wrapper {
+    width: 1000px;
+}
+
+.meter-container {
+    width: 0;
+    overflow-x: hidden;
+    transition: width .4s ease-in-out;
+}
+
+.worm-meter {
+    width: 1000px;
+}
+
+.game {
+    background-image: url(./img/background.png);
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.holes-container {
+    margin-top: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.hole {
+    margin: 20px 70px 5px;
+    background-color: black;
+    width: var(--holeSize);
+    height: var(--holeSize);
+    border-radius: 50%;
+}
+
+.hole img {
+    position: relative;
+    top: 20px;
+    left: -25px;
+    width: 120%;
+    display: none;
+}
+
+.hole img[src="./img/mole-hungry.png"] {
+    cursor: url('./img/cursor-worm.png') 50 50, auto;
+}
+
+.hole img.show {
+    display: block;
+}
+
+.win-board {
+    display: flex;
+    justify-content: center;
+    background-color: chocolate;
+}
+
+.win-board img {
+    height: 100vh;
+}
